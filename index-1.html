@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>MOVIQA — Stories Beyond Reality</title>
+<style>
+:root{--red:#ef233c;--bg:#090909;--panel:#171717;--muted:#aaa;--white:#f7f7f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+header{position:sticky;top:0;z-index:10;background:rgba(8,8,8,.95);backdrop-filter:blur(12px);border-bottom:1px solid #242424;padding:14px 5%;display:flex;align-items:center;gap:22px}
+.logo{font-size:26px;font-weight:900;letter-spacing:-1px;color:white;text-decoration:none}.logo span{color:var(--red)}
+nav{display:flex;gap:18px;margin-left:12px}nav a{color:#ddd;text-decoration:none;font-size:14px}nav a:hover{color:var(--red)}
+.search{margin-left:auto;width:min(260px,38vw);background:#191919;border:1px solid #333;border-radius:22px;padding:10px 14px;color:white;outline:none}
+.hero{min-height:440px;padding:68px 6% 50px;display:flex;align-items:center;background:linear-gradient(90deg,#090909 0%,rgba(9,9,9,.92) 35%,rgba(9,9,9,.3) 100%),radial-gradient(ellipse at 75% 30%,#68131e 0%,#261015 27%,#111 62%,#090909 100%)}
+.hero-content{max-width:610px}.eyebrow{color:var(--red);font-weight:800;text-transform:uppercase;letter-spacing:3px;font-size:12px}
+h1{font-size:clamp(36px,7vw,66px);line-height:.98;margin:14px 0}.hero p{color:#d0d0d0;line-height:1.6;max-width:540px}
+.btn{border:0;border-radius:5px;padding:12px 18px;font-weight:800;cursor:pointer;margin:8px 8px 0 0}.primary{background:var(--red);color:white}.secondary{background:#292929;color:white;border:1px solid #444}.notice{font-size:12px;color:#aaa;margin-top:16px}
+main{padding:20px 5% 60px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:22px 0 14px}.section-head h2{font-size:22px;margin:0}.section-head small{color:var(--muted)}
+.filters{display:flex;gap:8px;overflow:auto;padding:2px 0 14px}.filter{white-space:nowrap;background:#1c1c1c;color:#ddd;border:1px solid #333;border-radius:20px;padding:8px 14px;cursor:pointer}.filter.active{background:var(--red);border-color:var(--red);color:white}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{background:var(--panel);border:1px solid #262626;border-radius:8px;overflow:hidden;min-width:0}.poster{height:210px;display:flex;align-items:end;padding:15px;background:linear-gradient(150deg,#40101a,#151515 58%,#292929);position:relative}.poster:after{content:"MOVIQA ORIGINAL";position:absolute;top:12px;left:12px;font-size:9px;letter-spacing:1.5px;color:#fff;background:#0009;padding:5px 7px;border-radius:3px}.poster .symbol{font-size:45px;font-weight:900;color:#ffffff2e;position:absolute;right:12px;top:52px}.poster h3{font-size:20px;margin:0;position:relative;z-index:1;text-shadow:0 2px 8px #000}.card-info{padding:12px}.meta{font-size:11px;color:#aaa;margin:0 0 8px}.card-info p{font-size:13px;line-height:1.45;color:#ccc;margin:0 0 12px}.card-actions{display:flex;gap:7px}.small-btn{flex:1;padding:9px 7px;font-size:12px;border-radius:4px}
+.empty{border:1px dashed #444;padding:25px;border-radius:8px;color:#bbb;line-height:1.5;margin:16px 0}
+footer{border-top:1px solid #292929;padding:25px 5%;color:#999;font-size:12px;line-height:1.6}footer strong{color:#fff}
+.modal{display:none;position:fixed;inset:0;z-index:30;background:#000d;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.dialog{background:#171717;border:1px solid #333;border-radius:10px;max-width:520px;width:100%;padding:24px}.dialog h2{margin-top:0}.dialog p{color:#ccc;line-height:1.6}.close{float:right;background:transparent;border:0;color:white;font-size:25px;cursor:pointer}
+@media(max-width:760px){header{gap:12px;flex-wrap:wrap;padding:12px 4%}.logo{font-size:23px}nav{order:3;width:100%;margin:0;overflow:auto;padding-bottom:2px}.search{width:42%;font-size:12px}.hero{min-height:400px;padding:52px 5%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.poster{height:180px}.section-head h2{font-size:19px}}
+@media(max-width:360px){.grid{grid-template-columns:1fr}.poster{height:220px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">MOVI<span>QA</span></a>
+  <nav><a href="#home">Home</a><a href="#movies">Movies</a><a href="#series">Series</a><a href="#premium">Premium</a></nav>
+  <input class="search" id="search" type="search" placeholder="Search titles..." aria-label="Search titles">
+</header>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">Stories Beyond Reality</div>
+    <h1>Every story<br>has a secret.</h1>
+    <p>Discover drama, romance, action and comedy from MOVIQA. Original stories are coming soon—made for viewers who love unforgettable characters and unexpected twists.</p>
+    <button class="btn primary" onclick="showInfo('Coming soon','The MOVIQA video library is being prepared. When your first video is ready, we can add it here and connect the player.')">▶ Explore MOVIQA</button>
+    <button class="btn secondary" onclick="document.querySelector('#movies').scrollIntoView({behavior:'smooth'})">Browse titles</button>
+    <div class="notice">Preview website · Video library and accounts are not connected yet.</div>
+  </div>
+</section>
+<main>
+  <div class="section-head"><h2 id="movies">Featured stories</h2><small>Originals & licensed titles</small></div>
+  <div class="filters" id="filters">
+    <button class="filter active" data-category="All">All</button><button class="filter" data-category="Drama">Drama</button><button class="filter" data-category="Romance">Romance</button><button class="filter" data-category="Action">Action</button><button class="filter" data-category="Comedy">Comedy</button>
+  </div>
+  <div class="grid" id="grid">
+    <article class="card" data-title="The Millionaire's Secret" data-category="Drama">
+      <div class="poster"><span class="symbol">M</span><h3>The Millionaire's Secret</h3></div><div class="card-info"><p class="meta">SERIES · DRAMA · COMING SOON</p><p>A mysterious phone pulls Kato into a dangerous world of money, power and hidden identities.</p><div class="card-actions"><button class="btn primary small-btn" onclick="showInfo('The Millionaire’s Secret','Your series is listed as coming soon. Once you have a video file or hosted video link, we can add real playback here.')">▶ Details</button><button class="btn secondary small-btn" onclick="showInfo('Coming soon','Episodes will appear here after they are produced and uploaded.')">Episodes</button></div></div>
+    </article>
+    <article class="card" data-title="Love & Jealousy" data-category="Romance">
+      <div class="poster" style="background:linear-gradient(145deg,#662b43,#21141d 60%,#111)"><span class="symbol">♥</span><h3>Love & Jealousy</h3></div><div class="card-info"><p class="meta">SERIES · ROMANCE · PLANNED</p><p>Love, misunderstandings and ambition collide in a relationship tested by secrets.</p><div class="card-actions"><button class="btn primary small-btn" onclick="showInfo('Love & Jealousy','This is a sample catalogue card. Replace it with your own story or a film you have permission to distribute.')">▶ Details</button></div></div>
+    </article>
+    <article class="card" data-title="City of Shadows" data-category="Action">
+      <div class="poster" style="background:linear-gradient(145deg,#26465a,#17191c 60%,#111)"><span class="symbol">⚡</span><h3>City of Shadows</h3></div><div class="card-info"><p class="meta">FILM · ACTION · PLANNED</p><p>A city where every deal has a price and every ally may have another plan.</p><div class="card-actions"><button class="btn primary small-btn" onclick="showInfo('City of Shadows','This is a sample catalogue card, not a currently available movie.')">▶ Details</button></div></div>
+    </article>
+    <article class="card" data-title="Roommates" data-category="Comedy">
+      <div class="poster" style="background:linear-gradient(145deg,#66502a,#252016 60%,#111)"><span class="symbol">!</span><h3>Roommates</h3></div><div class="card-info"><p class="meta">SERIES · COMEDY · PLANNED</p><p>Two friends, one tiny apartment and a new disaster every morning.</p><div class="card-actions"><button class="btn primary small-btn" onclick="showInfo('Roommates','This is a sample catalogue card, not a currently available show.')">▶ Details</button></div></div>
+    </article>
+  </div>
+  <div class="section-head" id="series"><h2>Series & episodes</h2></div>
+  <div class="empty">Your series hub will list seasons and episodes here. We can add episode numbers, summaries, release dates and a “Continue watching” area when the video library is ready.</div>
+  <div class="section-head" id="premium"><h2>Premium</h2><small>Subscription features planned</small></div>
+  <div class="empty">Premium access is not active yet. Before accepting payments, MOVIQA will need secure accounts, server-side subscription checks and a payment provider. Do not collect card details on this prototype.</div>
+</main>
+<footer><strong>MOVIQA</strong> — Stories Beyond Reality<br>This is an early design prototype. Sample titles are placeholders, not a claim that the films are available to stream. Only upload or distribute videos you own or have permission to use.</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="dialog"><button class="close" aria-label="Close" onclick="closeInfo()">×</button><h2 id="modal-title"></h2><p id="modal-text"></p><button class="btn primary" onclick="closeInfo()">Got it</button></div></div>
+<script>
+const search=document.getElementById('search'), cards=[...document.querySelectorAll('.card')];let category='All';
+function filterCards(){const q=search.value.toLowerCase();cards.forEach(c=>{c.style.display=((category==='All'||c.dataset.category===category)&&c.dataset.title.toLowerCase().includes(q))?'':'none'})}
+search.addEventListener('input',filterCards);
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');category=b.dataset.category;filterCards()}));
+function showInfo(title,body){document.getElementById('modal-title').textContent=title;document.getElementById('modal-text').textContent=body;document.getElementById('modal').classList.add('show')}
+function closeInfo(){document.getElementById('modal').classList.remove('show')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeInfo()});
+</script>
+</body>
+</html>
