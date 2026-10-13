@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>MOVIQA — Stories Beyond Reality</title>
+<style>
+:root{--red:#ff1532;--bg:#08090b;--panel:#131519;--muted:#b6bbc5;--line:#30343b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#fff;font-family:Inter,Arial,Helvetica,sans-serif}button,input{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}.topbar{display:flex;align-items:center;gap:28px;padding:18px 4%;border-bottom:1px solid #292b30;background:#080808;position:sticky;top:0;z-index:10}.logo{font-weight:950;font-size:clamp(24px,3vw,36px);letter-spacing:-1.8px;white-space:nowrap}.logo span{color:var(--red)}.tagline{font-size:8px;letter-spacing:4px;margin-top:1px;color:#d8d8d8}.brand{min-width:190px}.nav{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:700}.nav a:hover,.nav a.active{color:var(--red)}.spacer{flex:1}.search{width:min(260px,23vw);border:1px solid #555b65;border-radius:30px;padding:11px 15px;background:#050607;color:white;min-width:120px}.btn{border:1px solid #737985;background:transparent;color:white;border-radius:24px;padding:11px 19px;font-weight:700;cursor:pointer;white-space:nowrap}.btn:hover{border-color:white}.btn.red{background:var(--red);border-color:var(--red)}.btn.red:hover{background:#d90c26}.hero{min-height:410px;position:relative;display:flex;align-items:center;padding:48px 5%;overflow:hidden;border-bottom:1px solid #292b30;background:radial-gradient(ellipse at 72% 35%,#263e50 0,transparent 28%),radial-gradient(ellipse at 65% 60%,#5c0714 0,transparent 35%),linear-gradient(90deg,#050505 4%,#08090beF 36%,#08090b70 68%,#050505 100%)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0%,transparent 72%),linear-gradient(0deg,#08090b 0%,transparent 28%);pointer-events:none}.hero-art{position:absolute;right:7%;top:0;height:100%;width:51%;opacity:.78;background:radial-gradient(ellipse at 52% 30%,#c8b4a3 0 5%,#392b2b 6% 12%,transparent 13%),radial-gradient(ellipse at 52% 78%,#161b23 0 18%,transparent 19%),linear-gradient(115deg,transparent 12%,#9b0b1e 34%,transparent 49%),linear-gradient(70deg,transparent 20%,#132c3c 55%,#050608 85%);filter:saturate(1.15)}.hero-content{position:relative;z-index:1;max-width:540px}.eyebrow{color:var(--red);font-size:12px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.hero h1{font-family:Georgia,serif;font-size:clamp(38px,6vw,70px);line-height:.95;margin:18px 0 10px;letter-spacing:-2px}.hero h1 em{display:block;color:var(--red);font-family:Arial,sans-serif;font-style:italic;font-weight:950;letter-spacing:1px}.hero p{max-width:460px;color:#e0e2e6;line-height:1.55;font-size:15px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.section{padding:24px 3% 4px}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.section h2{font-size:23px;margin:0;letter-spacing:-.6px}.section h2 span{color:var(--red)}.small-link{font-size:12px;color:#d9dce2}.movie-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}.movie{min-width:0;position:relative;overflow:hidden;border:1px solid #343840;border-radius:7px;background:#14161a;min-height:150px;display:flex;align-items:flex-end;isolation:isolate}.poster{position:absolute;inset:0;z-index:-2;background:linear-gradient(135deg,#303844,#08090b)}.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050608 0%,#050608d9 25%,transparent 75%)}.poster.redtone{background:radial-gradient(circle at 65% 25%,#a43137,transparent 26%),linear-gradient(130deg,#08090b,#4c0c16 45%,#19202a)}.poster.bluetone{background:radial-gradient(circle at 65% 20%,#7599b3,transparent 25%),linear-gradient(130deg,#07111b,#163e54 50%,#07090b)}.poster.goldtone{background:radial-gradient(circle at 60% 20%,#d6a36c,transparent 25%),linear-gradient(130deg,#08090b,#61432c 50%,#11131a)}.poster.greentone{background:radial-gradient(circle at 60% 20%,#91b77e,transparent 25%),linear-gradient(130deg,#10291d,#315c3c 48%,#08090b)}.poster.purpletone{background:radial-gradient(circle at 60% 20%,#b18aa9,transparent 25%),linear-gradient(130deg,#100b17,#55213e 48%,#08090b)}.badge{position:absolute;top:9px;left:9px;background:var(--red);padding:4px 7px;border-radius:4px;font-size:9px;font-weight:900}.movie-info{padding:12px;width:100%}.movie-info h3{font-size:13px;margin:0 0 5px;line-height:1.2}.movie-info p{font-size:10px;color:#c4c8d0;margin:0}.play{border:1px solid #e9edf2;border-radius:50%;width:28px;height:28px;background:#08090bc9;color:#fff;cursor:pointer;margin-bottom:8px}.movie-info-row{display:flex;align-items:center;gap:8px}.categories{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.category{border:1px solid #373b43;border-radius:7px;padding:22px 18px;min-height:100px;display:flex;align-items:center;gap:14px;background:linear-gradient(115deg,#1a1c20,#08090b);cursor:pointer;text-align:left;color:white}.category:hover{border-color:var(--red)}.category .icon{font-size:28px}.category strong{display:block;font-size:15px}.category small{display:block;color:#bfc4ce;margin-top:5px}.premium{margin:22px 3% 26px;border:1px solid #4b252b;border-radius:8px;padding:24px;background:radial-gradient(ellipse at 90% 40%,#4b0714,transparent 45%),linear-gradient(100deg,#16090c,#0a0a0c);display:flex;align-items:center;justify-content:space-between;gap:20px}.premium h2{margin:0 0 8px}.premium p{margin:0;color:#d4d6dc;line-height:1.5;max-width:570px}.footer{border-top:1px solid #6c1521;padding:24px 4%;display:flex;justify-content:space-between;align-items:center;gap:22px;color:#d5d8de;font-size:12px}.foot-item{display:flex;align-items:center;gap:10px}.foot-icon{font-size:22px;color:white}.modal{position:fixed;inset:0;background:#000c;z-index:30;display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal-card{max-width:520px;width:100%;background:#15171c;border:1px solid #424650;border-radius:12px;padding:26px;position:relative}.modal-card h2{margin-top:0}.modal-card p{color:#c6cbd4;line-height:1.6}.close{position:absolute;right:14px;top:10px;background:transparent;color:white;border:0;font-size:25px;cursor:pointer}.field{display:block;width:100%;padding:12px;border-radius:6px;border:1px solid #454a54;background:#090a0c;color:white;margin:10px 0 14px}.notice{font-size:12px;color:#aeb4bf;margin-top:12px}.empty{display:none;padding:18px;color:#c8cbd1}.section[id]{scroll-margin-top:90px}
+@media(max-width:1000px){.topbar{gap:14px;flex-wrap:wrap}.nav{order:3;width:100%;justify-content:center}.brand{min-width:unset}.search{width:200px}.movie-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero-art{right:-5%;width:62%}.categories{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.topbar{padding:13px 4%;gap:10px}.brand{flex:1}.logo{font-size:27px}.tagline{font-size:7px;letter-spacing:3px}.search{order:4;width:100%;max-width:none}.topbar>.btn{padding:9px 12px;font-size:12px}.nav{justify-content:flex-start;gap:19px;overflow-x:auto;padding:6px 0;font-size:12px}.hero{min-height:430px;padding:40px 6%;align-items:flex-end}.hero-art{right:-20%;top:0;width:110%;height:75%;opacity:.42}.hero-content{margin-top:80px}.hero h1{font-size:43px}.hero p{font-size:14px}.section{padding:22px 4% 0}.section h2{font-size:20px}.movie-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.movie{min-height:190px}.categories{grid-template-columns:1fr}.category{min-height:84px}.premium{margin:22px 4%;align-items:flex-start;flex-direction:column}.footer{flex-wrap:wrap}.foot-item{width:45%}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="MOVIQA home"><div class="logo">MOVI<span>Q</span>A</div><div class="tagline">STORIES BEYOND REALITY</div></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="active" href="#home">⌂ Home</a><a href="#movies">Movies</a><a href="#series">Series</a><a href="#free">Free</a><a href="#premium">♛ Premium</a>
+  </nav>
+  <div class="spacer"></div>
+  <input id="search" class="search" type="search" placeholder="⌕  Search movies or series…" aria-label="Search movies and series">
+  <button class="btn" data-modal="login">Login</button><button class="btn red" data-modal="signup">Sign Up</button>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-art" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="eyebrow">♛ &nbsp; MOVIQA ORIGINAL SERIES</div>
+    <h1>THE<br>MILLIONAIRE'S <em>SECRET</em></h1>
+    <p>A poor young man. A mysterious phone. A secret that could change everything. What starts as a simple find turns into a dangerous journey of wealth, lies and survival.</p>
+    <div class="actions"><button class="btn red" data-watch="The Millionaire's Secret">▶ &nbsp; Watch Now</button><button class="btn" data-modal="signup">＋ &nbsp; Join MOVIQA</button><button class="btn" data-modal="info">ⓘ &nbsp; More Info</button></div>
+  </div>
+</section>
+<section class="section" id="movies">
+  <div class="section-head"><h2>Trending <span>Now</span></h2><a class="small-link" href="#movies">Explore titles →</a></div>
+  <div class="movie-grid" id="movieGrid">
+    <article class="movie" data-title="The Millionaire's Secret" data-kind="series"><div class="poster redtone"></div><span class="badge">SERIES</span><div class="movie-info"><div class="movie-info-row"><button class="play" data-watch="The Millionaire's Secret" aria-label="Play The Millionaire's Secret">▶</button><div><h3>The Millionaire's Secret</h3><p>Series · Episode 1</p></div></div></div></article>
+    <article class="movie" data-title="Love & Betrayal" data-kind="movie"><div class="poster goldtone"></div><span class="badge">MOVIE</span><div class="movie-info"><div class="movie-info-row"><button class="play" data-watch="Love & Betrayal" aria-label="Play Love and Betrayal">▶</button><div><h3>Love &amp; Betrayal</h3><p>Drama · 1h 45m</p></div></div></div></article>
+    <article class="movie" data-title="The Last Mission" data-kind="premium"><div class="poster bluetone"></div><span class="badge">PREMIUM</span><div class="movie-info"><div class="movie-info-row"><button class="play" data-watch="The Last Mission" aria-label="Play The Last Mission">▶</button><div><h3>The Last Mission</h3><p>Action · 1h 58m</p></div></div></div></article>
+    <article class="movie" data-title="Campus Crazy" data-kind="free"><div class="poster greentone"></div><span class="badge">FREE</span><div class="movie-info"><div class="movie-info-row"><button class="play" data-watch="Campus Crazy" aria-label="Play Campus Crazy">▶</button><div><h3>Campus Crazy</h3><p>Comedy · 1h 32m</p></div></div></div></article>
+    <article class="movie" data-title="Broken Hearts" data-kind="series"><div class="poster purpletone"></div><span class="badge">SERIES</span><div class="movie-info"><div class="movie-info-row"><button class="play" data-watch="Broken Hearts" aria-label="Play Broken Hearts">▶</button><div><h3>Broken Hearts</h3><p>Series · 5 Episodes</p></div></div></div></article>
+    <article class="movie" data-title="Silent Revenge" data-kind="premium"><div class="poster bluetone"></div><span class="badge">PREMIUM</span><div class="movie-info"><div class="movie-info-row"><button class="play" data-watch="Silent Revenge" aria-label="Play Silent Revenge">▶</button><div><h3>Silent Revenge</h3><p>Thriller · 2h 10m</p></div></div></div></article>
+  </div>
+  <p class="empty" id="empty">No titles match your search. Try another title.</p>
+</section>
+<section class="section" id="series">
+  <div class="section-head"><h2>Browse by <span>Category</span></h2></div>
+  <div class="categories">
+    <button class="category" data-filter="movie"><span class="icon">🎞</span><span><strong>Movies</strong><small>Blockbusters &amp; classics</small></span></button>
+    <button class="category" data-filter="series"><span class="icon">📺</span><span><strong>Series</strong><small>Binge-worthy stories</small></span></button>
+    <button class="category" id="free" data-filter="free"><span class="icon">🎁</span><span><strong>Free Movies</strong><small>Watch without a subscription</small></span></button>
+    <button class="category" data-filter="premium"><span class="icon">♛</span><span><strong>Premium</strong><small>Exclusive content</small></span></button>
+  </div>
+</section>
+<section class="premium" id="premium"><div><div class="eyebrow">♛ &nbsp; LEVEL UP YOUR MOVIE NIGHTS</div><h2>Go Premium on MOVIQA</h2><p>Get access to premium stories, exclusive releases and more. Membership and payments will be connected in a later launch phase.</p></div><button class="btn red" data-modal="plans">Explore Plans</button></section>
+</main>
+<footer class="footer">
+  <a class="brand" href="#home"><div class="logo">MOVI<span>Q</span>A</div><div class="tagline">STORIES BEYOND REALITY</div></a>
+  <div class="foot-item"><span class="foot-icon">▣</span><span><strong>Watch Anywhere</strong><br>On phone or computer</span></div>
+  <div class="foot-item"><span class="foot-icon">♢</span><span><strong>Safe &amp; Secure</strong><br>Privacy matters</span></div>
+  <div class="foot-item"><span class="foot-icon">☏</span><span><strong>Support</strong><br>Help for viewers</span></div>
+  <div>© 2026 MOVIQA</div>
+</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><button class="close" id="close" aria-label="Close dialog">×</button><h2 id="modalTitle">MOVIQA</h2><div id="modalBody"></div></div></div>
+<script>
+const modal=document.getElementById('modal'), title=document.getElementById('modalTitle'), body=document.getElementById('modalBody');
+function showModal(kind, movie=''){
+ const content={
+  login:['Welcome back','<p>Viewer login will be connected when the secure account system is added.</p><label>Email address<input class="field" type="email" placeholder="you@example.com"></label><button class="btn red" data-demo>Continue</button>'],
+  signup:['Join MOVIQA','<p>Create your future MOVIQA account to keep track of series and premium titles.</p><label>Email address<input class="field" type="email" placeholder="you@example.com"></label><button class="btn red" data-demo>Get Started</button><p class="notice">Demo only: account registration is not connected yet.</p>'],
+  info:["The Millionaire's Secret",'<p>A young man discovers a mysterious phone and is pulled into a dangerous world of wealth, secrets and betrayal.</p><p><strong>Genre:</strong> Drama · Mystery · Thriller<br><strong>Availability:</strong> Series preview</p><button class="btn red" data-watch="The Millionaire\\'s Secret">▶ Watch preview</button>'],
+  plans:['MOVIQA Premium','<p>Premium plans are planned for a future launch. We will connect secure payments and membership access before accepting subscriptions.</p><p><strong>Coming features:</strong> exclusive titles, premium series and member access.</p>'],
+  watch:[movie,'<p>This is a design preview. The movie player will work once you add your video file or YouTube link.</p><p>For now, add your own licensed video in the website code before launch.</p><button class="btn red" data-demo>Got it</button>']
+ };
+ const selected=content[kind]||content.info;title.textContent=selected[0];body.innerHTML=selected[1];modal.classList.add('open');
+}
+document.querySelectorAll('[data-modal]').forEach(b=>b.addEventListener('click',()=>showModal(b.dataset.modal)));
+document.querySelectorAll('[data-watch]').forEach(b=>b.addEventListener('click',()=>showModal('watch',b.dataset.watch)));
+document.getElementById('close').addEventListener('click',()=>modal.classList.remove('open'));
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+body.addEventListener('click',e=>{if(e.target.matches('[data-demo]')){const note=document.createElement('p');note.className='notice';note.textContent='This is a front-end demo. Connect a backend before launch.';e.target.after(note);e.target.disabled=true;}});
+const search=document.getElementById('search'), cards=[...document.querySelectorAll('.movie')], empty=document.getElementById('empty');
+function filterCards(term='',kind=''){let count=0;cards.forEach(c=>{const matchesText=c.dataset.title.toLowerCase().includes(term.toLowerCase());const matchesKind=!kind||c.dataset.kind===kind||(kind==='movie'&&c.dataset.kind==='free');c.style.display=matchesText&&matchesKind?'flex':'none';if(matchesText&&matchesKind)count++;});empty.style.display=count?'none':'block';}
+search.addEventListener('input',()=>filterCards(search.value));
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{search.value='';filterCards('',b.dataset.filter);document.getElementById('movies').scrollIntoView({behavior:'smooth'});}));
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.querySelectorAll('.nav a').forEach(x=>x.classList.remove('active'));a.classList.add('active')}));
+</script>
+</body>
+</html>
